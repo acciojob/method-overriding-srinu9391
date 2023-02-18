@@ -1,31 +1,21 @@
-// Class A with method meth
-class A {
-    public String meth() {
-        return "Invoking method from class A";
-    }
-}
-
-// Class B extending A
-class B extends A {
-    // Overriding method meth
-    @Override
-    public String meth() {
-        return "Method is overridden in Extended class B";
-    }
-}
-
-// Main class to test method overriding
+package com.driver;
 public class Main {
-    public static void main(String[] args) {
-        // Creating object of class B
-        B objB = new B();
-
-        // Calling method meth of class A using objB
-        String str1 = objB.meth();
-        System.out.println( str1);
-
-        // Calling overridden method meth of class B using objB
-        String str2 = objB.meth();
-        System.out.println(str2);
+    public static class A{
+        public String meth(){
+            return "Invoking method from class A";
+        }
     }
+    public static class B extends A{
+        public String meth(){
+            return "Method is overridden in Extendend class B";
+        }
+    }
+    public static void main(String[] args) {
+        B b = new B();
+        b.meth();
+
+        B b1 = new B();
+        b1.meth();
+    }
+
 }
